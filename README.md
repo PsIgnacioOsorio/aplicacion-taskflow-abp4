@@ -33,7 +33,7 @@ Abre el proyecto con Live Server o con un servidor local. No se recomienda abrir
 Ejemplo de instanciación:
 
 ```js
-const tarea = new Tarea("Estudiar ES6", false, null, null, "2026-07-20");
+const tarea = new Tarea("Copiar el codigo al profe", false, null, null, "2026-07-20");
 ```
 
 ### 2. Características JavaScript ES6+
@@ -75,7 +75,7 @@ const tarea = new Tarea("Estudiar ES6", false, null, null, "2026-07-20");
 TaskFlow_ABP/
 ├── index.html
 ├── tareasJson.json
-├── README_ABP.md
+├── README.md
 └── assets
     ├── css
     │   └── style.css
@@ -92,4 +92,4 @@ TaskFlow_ABP/
 
 ### Link de la app web
 
-[Link de aplicación TaskFlow](URL-del-link)
+[Link de aplicación TaskFlow](https://psignacioosorio.github.io/aplicacion-taskflow-abp4/)
