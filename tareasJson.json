@@ -1,0 +1,25 @@
+{
+    "tareas": [
+        {
+            "id": "36d10c5a-3c79-4c6f-9392-f8177bcea1c7",
+            "descripcion": "Hacer un tesito para la once",
+            "estado": false,
+            "fechaCreacion": "06/07/2026",
+            "fechaLimite": "2026-07-15"
+        },
+        {
+            "id": "b7c3ba5f-a582-4238-a402-4aa2f7f760fd",
+            "descripcion": "Hacer una torta para el cumpleaños de mi mamá",
+            "estado": false,
+            "fechaCreacion": "06/07/2026",
+            "fechaLimite": "2026-07-18"
+        },
+        {
+            "id": "9d9d7456-fc77-4233-8b05-d7ee6787abp4",
+            "descripcion": "Dominar el MUNDO (como dice el Pinki y Cerebro)",
+            "estado": true,
+            "fechaCreacion": "06/07/2026",
+            "fechaLimite": "2026-07-20"
+        }
+    ]
+}

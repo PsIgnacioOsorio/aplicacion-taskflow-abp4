@@ -1,0 +1,258 @@
+/* ===============================
+   TaskFlow - CSS complementario
+   Base visual usando Bootstrap 5
+   =============================== */
+
+:root {
+    --tf-card-radius: 1rem;
+    --tf-soft-shadow: 0 0.75rem 2rem rgba(0, 0, 0, 0.08);
+    --tf-transition: all 0.25s ease;
+}
+
+body {
+    min-height: 100vh;
+    background:
+        radial-gradient(circle at top left, rgba(13, 110, 253, 0.18), transparent 32rem),
+        linear-gradient(135deg, #f8f9fa 0%, #eef3f9 100%);
+    color: #212529;
+}
+
+header {
+    background: linear-gradient(135deg, #0d6efd, #084298) !important;
+    box-shadow: 0 0.5rem 1.5rem rgba(13, 110, 253, 0.25);
+}
+
+header h1 {
+    letter-spacing: -0.04em;
+}
+
+main.container {
+    max-width: 1180px;
+}
+
+.card {
+    border: 0;
+    border-radius: var(--tf-card-radius);
+    box-shadow: var(--tf-soft-shadow);
+    overflow: hidden;
+}
+
+.card-body {
+    padding: 1.5rem;
+}
+
+section[aria-label="Resumen de tareas"] .card {
+    transition: var(--tf-transition);
+}
+
+section[aria-label="Resumen de tareas"] .card:hover {
+    transform: translateY(-4px);
+}
+
+#contador-total,
+#contador-pendientes,
+#contador-finalizadas {
+    color: #0d6efd;
+}
+
+.form-control,
+.form-select,
+.btn {
+    border-radius: 0.75rem;
+}
+
+.form-control:focus,
+.form-select:focus {
+    border-color: #0d6efd;
+    box-shadow: 0 0 0 0.2rem rgba(13, 110, 253, 0.18);
+}
+
+.form-label,
+.btn {
+    font-weight: 600;
+}
+
+.btn {
+    transition: var(--tf-transition);
+}
+
+.btn:hover {
+    transform: translateY(-1px);
+}
+
+.alert {
+    border: 0;
+    border-radius: 0.875rem;
+}
+
+#estado-api {
+    min-height: 1.2rem;
+}
+
+.table-responsive {
+    min-height: 120px;
+    background-color: #ffffff;
+}
+
+.table {
+    margin-bottom: 0;
+}
+
+.table thead th {
+    background-color: #f1f3f5;
+    color: #495057;
+    font-size: 0.8rem;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+    white-space: nowrap;
+}
+
+.table td,
+.table th {
+    vertical-align: middle;
+}
+
+table th:first-child,
+table td:first-child {
+    max-width: 180px;
+    word-break: break-word;
+    font-size: 0.8rem;
+}
+
+.table-success td,
+.table-success th {
+    opacity: 0.85;
+}
+
+.fila-activa {
+    outline: 2px solid rgba(13, 110, 253, 0.25);
+    outline-offset: -2px;
+}
+
+.badge {
+    border-radius: 999px;
+    padding: 0.45rem 0.65rem;
+}
+
+td .btn {
+    margin-bottom: 0.25rem;
+}
+
+#texto-sin-tareas {
+    padding: 2rem;
+    border: 2px dashed #ced4da;
+    border-radius: var(--tf-card-radius);
+    color: #6c757d;
+    background-color: #f8f9fa;
+}
+
+@keyframes aparecer {
+    from {
+        opacity: 0;
+        transform: translateY(8px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+#cuerpo-tabla-tareas tr {
+    animation: aparecer 0.25s ease;
+}
+
+@media (max-width: 991px) {
+    .card-body {
+        padding: 1.25rem;
+    }
+
+    .btn {
+        width: 100%;
+    }
+
+    td .btn {
+        width: auto;
+    }
+}
+
+@media (max-width: 768px) {
+    header {
+        padding-left: 1rem;
+        padding-right: 1rem;
+    }
+
+    main.container {
+        padding-left: 1rem;
+        padding-right: 1rem;
+    }
+
+    .card-body {
+        padding: 1rem;
+    }
+
+    .d-flex.flex-column.flex-lg-row {
+        align-items: stretch !important;
+    }
+
+    .table {
+        font-size: 0.9rem;
+    }
+}
+
+@media (max-width: 576px) {
+    .table-responsive {
+        overflow: visible;
+        background-color: transparent;
+    }
+
+    .table thead {
+        display: none;
+    }
+
+    .table,
+    .table tbody,
+    .table tr,
+    .table td,
+    .table th {
+        display: block;
+        width: 100%;
+    }
+
+    .table tr {
+        margin-bottom: 1rem;
+        padding: 1rem;
+        border-radius: 1rem;
+        background-color: #ffffff;
+        box-shadow: var(--tf-soft-shadow);
+    }
+
+    .table td,
+    .table th {
+        border: 0;
+        padding: 0.45rem 0;
+        max-width: 100%;
+    }
+
+    .table th::before,
+    .table td::before {
+        display: block;
+        margin-bottom: 0.15rem;
+        font-size: 0.72rem;
+        font-weight: 700;
+        text-transform: uppercase;
+        color: #6c757d;
+        letter-spacing: 0.04em;
+    }
+
+    .table th::before,
+    .table td::before {
+        content: attr(data-label);
+    }
+
+    td .btn {
+        width: 100%;
+        margin-right: 0 !important;
+        margin-bottom: 0.5rem;
+    }
+}
