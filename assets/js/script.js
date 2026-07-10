@@ -1,4 +1,5 @@
 import GestorTareas from "./clases/GestionTareas.js";
+import { mostrarConfirmacionBootstrap } from "./confirmaciones.js";
 
 const gestorTareas = new GestorTareas();
 let tareaEnEdicionId = null;
@@ -269,13 +270,45 @@ cuerpoTablaTareas.addEventListener("click", (event) => {
     }
 
     if (accion === "cambiar-estado") {
-        gestorTareas.cambiarEstadoTarea(id);
-        mostrarMensaje("Estado de la tarea actualizado.", "success");
+        const tarea = gestorTareas.obtenerTareaPorId(id);
+        const descripcion = tarea?.descripcion ?? "esta tarea";
+
+        mostrarConfirmacionBootstrap({
+            mensaje: `¿Está seguro que desea finalizar la tarea "${descripcion}" con ID: ${id}?`,
+            onConfirm: () => {
+                const respuesta = gestorTareas.finalizarTarea(id);
+
+                if (respuesta) {
+                    mostrarMensaje("Tarea finalizada correctamente.", "success");
+                } else {
+                    mostrarMensaje("No se pudo finalizar la tarea. Inténtalo nuevamente.", "danger");
+                }
+
+                aplicarFiltro();
+            },
+        });
+        return;
     }
 
     if (accion === "eliminar") {
-        gestorTareas.eliminarTarea(id);
-        mostrarMensaje("Tarea eliminada correctamente.", "warning");
+        const tarea = gestorTareas.obtenerTareaPorId(id);
+        const descripcion = tarea?.descripcion ?? "esta tarea";
+
+        mostrarConfirmacionBootstrap({
+            mensaje: `¿Está seguro que desea eliminar la tarea "${descripcion}" con ID: ${id}?`,
+            onConfirm: () => {
+                const respuesta = gestorTareas.eliminarTarea(id);
+
+                if (respuesta) {
+                    mostrarMensaje("Tarea eliminada correctamente.", "warning");
+                } else {
+                    mostrarMensaje("No se pudo eliminar la tarea. Inténtalo nuevamente.", "danger");
+                }
+
+                aplicarFiltro();
+            },
+        });
+        return;
     }
 
     aplicarFiltro();
