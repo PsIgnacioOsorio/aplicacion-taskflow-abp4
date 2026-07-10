@@ -81,11 +81,12 @@ TaskFlow_ABP/
     │   └── style.css
     └── js
         ├── script.js
+        ├── confirmaciones.js
         └── clases
             ├── GestionTareas.js
             └── Tarea.js
 ```
-
+git
 ## Autor
 
 - Ps. Ignacio Osorio Opazo
