@@ -86,11 +86,11 @@ TaskFlow_ABP/
             ├── GestionTareas.js
             └── Tarea.js
 ```
-git
+
 ## Autor
 
 - Ps. Ignacio Osorio Opazo
 
-### Link de la app web
+## Link de la app web
 
 [Link de aplicación TaskFlow](https://psignacioosorio.github.io/aplicacion-taskflow-abp4/)
